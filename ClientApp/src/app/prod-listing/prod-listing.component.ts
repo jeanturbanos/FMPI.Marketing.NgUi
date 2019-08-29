@@ -11,8 +11,9 @@ export class ProdListingComponent {
   public products: Product[];
   
   constructor(http: Http, @Inject('BASE_URL') baseUrl: string){
-      http.get(baseUrl + 'assets/json/products.json').subscribe(result => {
-        this.products = result.json() as Product[];
+    http.get(baseUrl + '/assets/json/products.json').subscribe(result => {
+      this.products = result.json() as Product[];
+      console.log(this.products);
       }, error => console.error(error));
   }
   

@@ -1,1 +1,29 @@
-Test
+<h1>Products</h1>
+
+
+<table class='table table-striped' *ngIf="products">
+  <thead>
+    <tr>
+      <th>User Inventory</th>
+      <th>Description</th>
+      <th>Brand</th>
+      <th>Category</th>
+      <th>Classification</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    
+    <tr *ngFor="let product of products" >
+      <ng-container *ngIf="product.SysPkInvty!='0'">
+        <td>{{ product.UserPkInvty }}</td>
+        <td>{{ product.DescriptionInvty }}</td>
+        <td>{{ product.BrandInvty }}</td>
+        <td>{{ product.CategoryInvty }}</td>
+        <td>{{ product.ClassificationInvty }}</td>
+      </ng-container>
+      
+    </tr>
+  
+  </tbody>
+</table>
